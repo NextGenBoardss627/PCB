@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXTGEN BOARDSS - Premium PCBs & Electronics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #03045e 0%, #0077b6 100%);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .payment-method {
+            transition: all 0.3s ease;
+        }
+        
+        .payment-method:hover {
+            transform: scale(1.05);
+        }
+        
+        .contact-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #3b82f6;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-microchip text-3xl text-blue-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">NEXTGEN BOARDSS</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#products" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Products</a>
+                    <a href="#features" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Features</a>
+                    <a href="#payment" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Payment</a>
+                    <a href="#contact" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <button class="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <i class="fas fa-shopping-cart mr-2"></i> Cart
+                            <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                        </button>
+                    </div>
+                    <div class="ml-4 md:hidden">
+                        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" id="mobile-menu-button">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="hidden md:hidden" id="mobile-menu">
+                <div class="pt-2 pb-3 space-y-1">
+                    <a href="#" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Home</a>
+                    <a href="#products" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Products</a>
+                    <a href="#features" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Features</a>
+                    <a href="#payment" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Payment</a>
+                    <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient relative overflow-hidden">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 relative z-10">
+            <div class="absolute inset-0 opacity-20">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/386ccd58-5749-441e-9a14-465d9226aa91.png" alt="Abstract PCB circuit pattern background" class="w-full h-full object-cover">
+            </div>
+            <div class="text-center relative z-10">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight font-serif">
+                    Premium PCB Manufacturing & <span class="text-luxury">Sealing Solutions</span>
+                </h1>
+                <p class="text-xl mb-8 opacity-90">
+                    From concept to sealed product - We deliver high-quality printed circuit boards with the most reliable protection solutions in the industry.
+                </p>
+                <div class="mt-10">
+                    <div class="flex space-x-4">
+                        <button class="btn-luxury px-8 py-3 rounded-full font-semibold shadow-lg">
+                            Get a Free Quote
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Why Choose NEXTGEN BOARDSS?
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    We deliver excellence in every PCB we manufacture
+                </p>
+            </div>
+            
+            <div class="mt-16">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-50 p-4 rounded-full">
+                            <i class="fas fa-shield-alt text-3xl text-blue-600"></i>
+                        </div>
+                        <h3 class="mt-4 text-lg font-medium text-gray-900">Quality Assurance</h3>
+                        <p class="mt-2 text-base text-gray-500 text-center">
+                            Rigorous testing and inspection for flawless performance.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-50 p-4 rounded-full">
+                            <i class="fas fa-truck text-3xl text-blue-600"></i>
+                        </div>
+                        <h3 class="mt-4 text-lg font-medium text-gray-900">Fast Shipping</h3>
+                        <p class="mt-2 text-base text-gray-500 text-center">
+                            Worldwide delivery with multiple shipping options.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-50 p-4 rounded-full">
+                            <i class="fas fa-cogs text-3xl text-blue-600"></i>
+                        </div>
+                        <h3 class="mt-4 text-lg font-medium text-gray-900">Custom Solutions</h3>
+                        <p class="mt-2 text-base text-gray-500 text-center">
+                            Tailored PCB designs for your specific requirements.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-50 p-4 rounded-full">
+                            <i class="fas fa-headset text-3xl text-blue-600"></i>
+                        </div>
+                        <h3 class="mt-4 text-lg font-medium text-gray-900">Expert Support</h3>
+                        <p class="mt-2 text-base text-gray-500 text-center">
+                            Dedicated technical assistance when you need it.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Our PCB Collection
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Select from our wide range of high-performance PCBs
+                </p>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="relative h-48 bg-gray-100 flex items-center justify-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5c120d07-2b44-41ce-9693-f82ef8ab4cc1.png" alt="Premium quality multilayer PCB with gold plating" class="max-h-full max-w-full object-contain" loading="lazy" />
+                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                            BEST SELLER
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-medium text-gray-900">BGA Motherboard</h3>
+                        <p class="mt-1 text-sm text-gray-500">High-density interconnection</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold text-gray-900">$24.99</span>
+                            <button class="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition duration-150 ease-in-out">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="relative h-48">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/02e697a1-bf0b-4f94-a5a6-ce263397b6de.png" alt="Professional RF circuit board with controlled impedance and gold-plated contacts" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-medium text-gray-900">RF Circuit Board</h3>
+                        <p class="mt-1 text-sm text-gray-500">Optimized for high frequency</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold text-gray-900">$19.99</span>
+                            <button class="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition duration-150 ease-in-out">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="relative h-48">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6e3cc259-6cfc-4a3e-abf1-b2f7892e2f04.png" alt="Flexible printed circuit with gold-plated contacts bending smoothly" class="w-full h-full object-cover" />
+                        <div class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">
+                            NEW
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-medium text-gray-900">Flex PCB</h3>
+                        <p class="mt-1 text-sm text-gray-500">For dynamic applications</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold text-gray-900">$32.99</span>
+                            <button class="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition duration-150 ease-in-out">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                    <div class="relative h-48">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dd6a56da-9831-4f03-8905-ae92bcbd0dc9.png" alt="Advanced 8-layer PCB with through-hole and surface mount technology" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-medium text-gray-900">8-Layer PCB</h3>
+                        <p class="mt-1 text-sm text-gray-500">Complex circuitry solutions</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold text-gray-900">$45.99</span>
+                            <button class="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition duration-150 ease-in-out">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition duration-150 ease-in-out">
+                    View All Products
+                    <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Milestones Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Our Journey So Far
+                </h2>
+                <div class="mt-12 grid md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-white rounded-lg shadow">
+                        <h3 class="text-xl font-bold text-blue-600">2000+</h3>
+                        <p class="mt-2 text-gray-600">PCBs Shipped Worldwide</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow">
+                        <h3 class="text-xl font-bold text-blue-600">5+ Years</h3>
+                        <p class="mt-2 text-gray-600">Industry Experience</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow">
+                        <h3 class="text-xl font-bold text-blue-600">98%</h3>
+                        <p class="mt-2 text-gray-600">Customer Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section id="payment" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Secure Payment Options
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Multiple payment methods for your convenience
+                </p>
+            </div>
+            
+            <div class="mt-12">
+                <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+                    <div class="payment-method p-4 bg-gray-50 rounded-lg flex items-center justify-center">
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-cc-visa text-4xl text-blue-900"></i>
+                            <span class="mt-2 text-sm text-gray-500">Visa</span>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-method p-4 bg-gray-50 rounded-lg flex items-center justify-center">
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-cc-mastercard text-4xl text-red-500"></i>
+                            <span class="mt-2 text-sm text-gray-500">Mastercard</span>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-method p-4 bg-gray-50 rounded-lg flex items-center justify-center">
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-cc-amex text-4xl text-blue-600"></i>
+                            <span class="mt-2 text-sm text-gray-500">Amex</span>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-method p-4 bg-gray-50 rounded-lg flex items-center justify-center">
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-cc-paypal text-4xl text-blue-700"></i>
+                            <span class="mt-2 text-sm text-gray-500">PayPal</span>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-method p-4 bg-gray-50 rounded-lg flex items-center justify-center">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-money-bill-wave text-4xl text-green-600"></i>
+                            <span class="mt-2 text-sm text-gray-500">Bank Transfer</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 max-w-3xl mx-auto bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-medium text-gray-900 text-center">Secure Checkout Process</h3>
+                    <ul class="mt-4 space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-sm text-gray-600">256-bit SSL encryption</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-sm text-gray-600">PCI DSS compliant</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-sm text-gray-600">Fraud protection</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-sm text-gray-600">Money back guarantee</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    What Our Customers Say
+                </h2>
+                <div class="mt-12 grid md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-gray-50 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 mr-4">
+                                <img class="h-12 w-12 rounded-full" src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/183151ea-da70-4d04-a6a2-c4bdaedd0472.png" alt="Customer profile">
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium">Alex Johnson</h4>
+                                <p class="text-gray-500">Electronics Engineer</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-600">"The PCB quality exceeded my expectations. Fast shipping and excellent support!"</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 mr-4">
+                                <img class="h-12 w-12 rounded-full" src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/eeab9fb2-f86f-4ca3-9893-6628f813e2c9.png" alt="Customer profile">
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium">Sarah Miller</h4>
+                                <p class="text-gray-500">Product Designer</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-600">"Reliable components and on-time delivery. Will order again!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Get In Touch
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    We'd love to hear from you
+                </p>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Submit Your Custom PCB Design</h3>
+                    <form enctype="multipart/form-data">
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                            <input type="text" id="name" class="contact-input w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" class="contact-input w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-4">
+                            <label for="pcb-type" class="block text-sm font-medium text-gray-700 mb-1">PCB Type</label>
+                            <select id="pcb-type" class="contact-input w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">Select PCB Type</option>
+                                <option value="single">Single Layer</option>
+                                <option value="double">Double Layer</option>
+                                <option value="multi">Multi-Layer</option>
+                                <option value="flex">Flex PCB</option>
+                                <option value="rigid-flex">Rigid-Flex</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="design-files" class="block text-sm font-medium text-gray-700 mb-1">Design Files</label>
+                            <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                <div class="space-y-1 text-center">
+                                    <div class="flex text-sm text-gray-600">
+                                        <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none">
+                                            <span>Upload files</span>
+                                            <input id="file-upload" name="file-upload" type="file" class="sr-only" multiple accept=".brd,.sch,.pdf,.zip,.rar" aria-labelledby="design-files">
+                                        </label>
+                                        <p class="pl-1">or drag and drop</p>
+                                    </div>
+                                    <p class="text-xs text-gray-500">
+                                        GERBER, PDF, or ZIP files up to 10MB
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="4" class="contact-input w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Your message here"></textarea>
+                        </div>
+                        <div class="mt-6">
+                            <button type="submit" class="w-full px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-medium text-gray-900 mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-envelope text-blue-600 mt-1"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">Email</p>
+                                <p class="text-sm text-gray-500">nextgenboardss627@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-phone-alt text-blue-600 mt-1"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">Phone</p>
+                                <p class="text-sm text-gray-500">+91 9316453960</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-clock text-blue-600 mt-1"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">Hours</p>
+                                <p class="text-sm text-gray-500">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://instagram.com/nextgenboards" target="_blank" class="bg-gray-100 hover:bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center" title="Follow us on Instagram">
+                                <i class="fab fa-instagram text-gray-700" aria-label="Instagram"></i>
+                            </a>
+                            <a href="https://facebook.com/nextgenboards" target="_blank" class="bg-gray-100 hover:bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center">
+                                <i class="fab fa-facebook-f text-gray-700"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center">
+                                <i class="fab fa-twitter text-gray-700"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center">
+                                <i class="fab fa-linkedin-in text-gray-700"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-blue-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Stay Updated</h2>
+                <p class="mt-4 max-w-2xl text-xl text-blue-100 mx-auto">
+                    Subscribe to our newsletter for the latest PCB tech and offers
+                </p>
+                <div class="mt-8 flex max-w-md mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-2 rounded-l-md focus:outline-none">
+                    <button class="px-6 py-2 bg-blue-800 text-white font-medium rounded-r-md hover:bg-blue-900 transition duration-150">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-gray-800 to-gray-900">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 gap-8 lg:grid-cols-4">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Products</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out">All PCBs</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out">New Arrivals</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out">Featured</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Company</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out">About Us</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out">Our Process</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Support</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out">Help Center</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Connect</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out">Instagram</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out">Facebook</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400">
+                    &copy; 2023 NEXTGEN BOARDSS. All rights reserved.
+                </p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out mr-4">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out mr-4">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-400 hover:text-white transition duration-150 ease-in-out">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Simple cart counter functionality
+        document.querySelectorAll('.product-card button').forEach(button => {
+            button.addEventListener('click', function() {
+                const cartCount = document.querySelector('.relative span');
+                let count = parseInt(cartCount.textContent);
+                cartCount.textContent = count + 1;
+                
+                // Animation effect
+                const btn = this;
+                btn.textContent = 'Added!';
+                setTimeout(() => {
+                    btn.textContent = 'Add to Cart';
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
