@@ -2,49 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Shopping Cart</title>
+  <title>Your Cart</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 30px;
-      background-color: #f4f4f4;
-    }
-    h1 {
-      color: #333;
-    }
-    #cart-items {
-      margin-top: 20px;
-    }
-    .item {
-      padding: 10px;
-      margin-bottom: 10px;
-      background: #fff;
-      border: 1px solid #ccc;
-    }
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    ul { list-style-type: none; padding: 0; }
+    li { margin: 10px 0; }
+    .total { font-weight: bold; margin-top: 20px; }
+    button { margin-top: 10px; background-color: red; color: white; padding: 5px 10px; border: none; cursor: pointer; }
+    a { display: inline-block; margin-top: 20px; text-decoration: none; color: blue; }
   </style>
 </head>
 <body>
-  <h1>Your Cart</h1>
-  <div id="cart-items">
-    <p>Loading cart items...</p>
-  </div>
+  <h1>Your Shopping Cart</h1>
+  <ul id="cart-items"></ul>
+  <p class="total" id="total-price"></p>
+  <button onclick="clearCart()">🗑 Clear Cart</button>
+  <br><br>
+  <a href="index.html">← Continue Shopping</a>
 
   <script>
-    // Try to get items from localStorage
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-
-    const cartContainer = document.getElementById('cart-items');
-    cartContainer.innerHTML = '';
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartList = document.getElementById("cart-items");
+    const totalDisplay = document.getElementById("total-price");
+    let total = 0;
 
     if (cartItems.length === 0) {
-      cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+      cartList.innerHTML = "<li>Your cart is empty</li>";
     } else {
-      cartItems.forEach((item, index) => {
-        const div = document.createElement('div');
-        div.className = 'item';
-        div.innerHTML = `<strong>${item.name}</strong><br>Price: ₹${item.price}<br>Quantity: ${item.qty}`;
-        cartContainer.appendChild(div);
+      cartItems.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - ₹${item.price}`;
+        cartList.appendChild(li);
+        total += item.price;
       });
+      totalDisplay.textContent = `Total: ₹${total}`;
+    }
+
+    function clearCart() {
+      localStorage.removeItem("cart");
+      location.reload();
     }
   </script>
 </body>
