@@ -4,43 +4,41 @@
   <meta charset="UTF-8">
   <title>Your Cart</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    ul { list-style-type: none; padding: 0; }
-    li { margin: 10px 0; }
-    .total { font-weight: bold; margin-top: 20px; }
-    button { margin-top: 10px; background-color: red; color: white; padding: 5px 10px; border: none; cursor: pointer; }
-    a { display: inline-block; margin-top: 20px; text-decoration: none; color: blue; }
+    body {
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .cart-item {
+      background: white;
+      margin: 10px auto;
+      padding: 10px;
+      max-width: 500px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
   <h1>Your Shopping Cart</h1>
-  <ul id="cart-items"></ul>
-  <p class="total" id="total-price"></p>
-  <button onclick="clearCart()">🗑 Clear Cart</button>
-  <br><br>
-  <a href="index.html">← Continue Shopping</a>
+  <div id="cart-container"></div>
 
   <script>
-    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartList = document.getElementById("cart-items");
-    const totalDisplay = document.getElementById("total-price");
-    let total = 0;
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const container = document.getElementById("cart-container");
 
-    if (cartItems.length === 0) {
-      cartList.innerHTML = "<li>Your cart is empty</li>";
+    if (cart.length === 0) {
+      container.innerHTML = "<p>Your cart is empty.</p>";
     } else {
-      cartItems.forEach(item => {
-        const li = document.createElement("li");
-        li.textContent = `${item.name} - ₹${item.price}`;
-        cartList.appendChild(li);
-        total += item.price;
+      cart.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "cart-item";
+        div.innerHTML = `<h3>${item.name}</h3><p>Price: ₹${item.price}</p>`;
+        container.appendChild(div);
       });
-      totalDisplay.textContent = `Total: ₹${total}`;
-    }
-
-    function clearCart() {
-      localStorage.removeItem("cart");
-      location.reload();
     }
   </script>
 </body>
