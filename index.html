@@ -53,6 +53,7 @@
       top: 1rem;
       right: 1rem;
       background: orange;
+      z-index: 999;
     }
     #cart {
       position: fixed;
@@ -67,6 +68,7 @@
       display: none;
       max-height: 70vh;
       overflow-y: auto;
+      z-index: 998;
     }
     .cart-item {
       display: flex;
@@ -77,29 +79,6 @@
       background: red;
       padding: 0.2rem 0.5rem;
       font-size: 0.8rem;
-    }
-
-    /* Cart Container Style at bottom */
-    .cart-container {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    .cart-container .cart-item {
-      background: white;
-      color: black;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    }
-    .cart-container .cart-item h3 {
-      margin: 0 0 0.5rem 0;
-    }
-    .empty {
-      text-align: center;
-      font-size: 1.2rem;
-      color: red;
     }
   </style>
 </head>
@@ -131,14 +110,12 @@
 
   <button class="view-cart" onclick="toggleCart()">View Cart</button>
 
+  <!-- Cart Panel -->
   <div id="cart">
     <h2>Your Cart</h2>
     <div id="cart-items"></div>
     <p><strong>Total: ₹<span id="cart-total">0</span></strong></p>
   </div>
-
-  <hr />
-  <section id="cart-container" class="cart-container"></section>
 
   <script>
     function addToCart(name, price) {
@@ -148,7 +125,6 @@
       localStorage.setItem("cart", JSON.stringify(cart));
       alert(name + " added to cart!");
       renderCart();
-      renderCartContainer(); // update bottom cart
     }
 
     function toggleCart() {
@@ -184,32 +160,9 @@
       cart.splice(index, 1);
       localStorage.setItem("cart", JSON.stringify(cart));
       renderCart();
-      renderCartContainer(); // update bottom cart
     }
 
-    function renderCartContainer() {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const container = document.getElementById("cart-container");
-
-      container.innerHTML = "";
-
-      if (cart.length === 0) {
-        container.innerHTML = "<p class='empty'>Your cart is empty.</p>";
-      } else {
-        cart.forEach(item => {
-          const div = document.createElement("div");
-          div.className = "cart-item";
-          div.innerHTML = `<h3>${item.name}</h3><p>Price: ₹${item.price}</p>`;
-          container.appendChild(div);
-        });
-      }
-    }
-
-    // Load both views on page load
-    window.onload = () => {
-      renderCart();
-      renderCartContainer();
-    };
+    window.onload = renderCart;
   </script>
 </body>
 </html>
